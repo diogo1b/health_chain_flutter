@@ -13,21 +13,11 @@ class PacientHomePage extends StatefulWidget {
 
 class _PacientHomePageState extends State<PacientHomePage> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Emergency Info',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Appointments',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Profile',
-      style: optionStyle,
-    ),
+
+  final _pageOptions = [
+    UserInfo(),
+    UserInfo(),
+    UserInfo(),
   ];
 
   void _onItemTapped(int index) {
@@ -50,9 +40,7 @@ class _PacientHomePageState extends State<PacientHomePage> {
           )
         ],
       ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
+      body:  _pageOptions[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

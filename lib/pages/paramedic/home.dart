@@ -7,31 +7,18 @@ class ParamedicHomePage extends StatefulWidget {
   final AuthService authService = AuthService();
   final VoidCallback onSignedOut;
 
-
   @override
   _ParamedicHomePageState createState() => _ParamedicHomePageState();
 }
 
 class _ParamedicHomePageState extends State<ParamedicHomePage> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Pacient',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Profile',
-      style: optionStyle,
-    ),
-  ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+  final _pageOptions = [
+    UserInfo(),
+    UserInfo(),
+    UserInfo(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +35,7 @@ class _ParamedicHomePageState extends State<ParamedicHomePage> {
         ],
       ),
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: _pageOptions[_selectedIndex],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
