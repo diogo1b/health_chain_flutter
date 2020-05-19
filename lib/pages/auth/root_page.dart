@@ -107,13 +107,19 @@ class _RootPageState extends State<RootPage> {
           print("Global role");
           print(globals.user.role);
           if(globals.user.role == "user") {
-            return new DoctorHomePage();
+            return new DoctorHomePage(
+              onSignedOut: _onSignedOut
+            );
           }
           if(globals.user.role == "paramedic") {
-            return new DoctorHomePage();
+            return new DoctorHomePage(
+              onSignedOut: _onSignedOut
+            );
           }
           if(globals.user.role == "doctor") {
-            return new DoctorHomePage();
+            return new DoctorHomePage(
+              onSignedOut: _onSignedOut
+            );
           }
         } else return _buildWaitingScreen();
         break;

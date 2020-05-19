@@ -61,6 +61,17 @@ class AuthService {
     }
   }
 
+  Future<void> signOut() async {
+    Map<String,String> headers = {
+      'Content-type' : 'application/json',
+      'Accept': 'application/json',
+      'Authorization' : globals.user.token
+    };
+
+    final response = await http.post(globals.API_URL+"/logout", headers: headers);
+    final responseJson = json.decode(response.body);
+  }
+
   Future<User> getCurrentUser() async {
    return globals.user;
   }
