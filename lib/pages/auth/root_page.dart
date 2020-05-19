@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:healthchainflutter/pages/pacient/home.dart';
+import 'package:healthchainflutter/pages/paramedic/home.dart';
 import 'package:healthchainflutter/services/auth_service.dart';
 import 'package:healthchainflutter/globals.dart' as globals;
 
@@ -107,12 +109,12 @@ class _RootPageState extends State<RootPage> {
           print("Global role");
           print(globals.user.role);
           if(globals.user.role == "user") {
-            return new DoctorHomePage(
+            return new PacientHomePage(
               onSignedOut: _onSignedOut
             );
           }
           if(globals.user.role == "paramedic") {
-            return new DoctorHomePage(
+            return new ParamedicHomePage(
               onSignedOut: _onSignedOut
             );
           }
