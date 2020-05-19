@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthchainflutter/services/auth_service.dart';
-import 'package:healthchainflutter/widgets/user_info.dart';
-
+import 'package:healthchainflutter/pages/widgets/user_info.dart';
 class DoctorHomePage extends StatefulWidget {
   DoctorHomePage({Key key, this.onSignedOut}) : super(key : key);
 

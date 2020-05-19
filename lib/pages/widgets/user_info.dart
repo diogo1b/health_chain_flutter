@@ -11,6 +11,15 @@ class UserInfo extends StatefulWidget{
 class _UserInfoState extends State<UserInfo>{
   @override
   Widget build(BuildContext context){
-    return Text('hola');
+    return Center(
+      child: ListView(
+        shrinkWrap: true,
+        padding: EdgeInsets.all(15.0),
+        children: <Widget>[
+          Text('Nombre'),
+          Text('Edad')
+        ],
+      ),
+    );
   }
 }
