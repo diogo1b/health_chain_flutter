@@ -60,10 +60,16 @@ class _UserInfoState extends State<UserInfo>{
   }
 
   _changePass() {
-  
+    Navigator.of(context)
+        .push(MaterialPageRoute(
+      builder: (BuildContext context) => ChangePasswordPage(),
+    ));
   }
 
   _showAbout() {
-
+    Navigator.of(context)
+        .push(MaterialPageRoute(
+      builder: (BuildContext context) => AboutUsPage(),
+    ));
   }
 }
