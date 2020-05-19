@@ -67,11 +67,13 @@ class _UserInfoState extends State<UserInfo>{
             bottom: 10
           ),
           child: RaisedButton(
+            shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+            elevation: 5.0,
             textColor: Colors.white,
             color: Color.fromRGBO(104, 202, 184, 1),
             padding: const EdgeInsets.all(5.0),
             onPressed: () {
-              
+              _changePass();
             },
             child: const Text('Editar información')
           ),
