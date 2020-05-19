@@ -14,6 +14,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage>{
   String _password;
   String _newPasword;
   String _newPasswordConfirmation;
+  String _aux;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +48,8 @@ class _ChangePasswordPageState extends State<ChangePasswordPage>{
                     return;
                   }
                   _formKey.currentState.save();
+                  print("object");
+
                   _updatePassword();
                 },
               )
@@ -77,11 +80,14 @@ class _ChangePasswordPageState extends State<ChangePasswordPage>{
     return TextFormField(
       decoration: InputDecoration(labelText: 'New Password'),
       maxLength: 30,
+      onChanged: (text) {
+        _aux = text;
+      },
       validator: (String value) {
         if (value.isEmpty) {
           return 'New Passwrod is Required';
         }
-        if (value.length < 7 ){
+        if (value.length < 6 ){
           return 'Passwrod most have than 6 characters';
         }
         return null;
@@ -100,10 +106,11 @@ class _ChangePasswordPageState extends State<ChangePasswordPage>{
         if (value.isEmpty) {
           return 'New Password Confirmation is Required';
         }
-        if (value.length < 7 ){
+        if (value.length < 6 ){
           return 'Passwrod most have than 6 characters';
         }
-        if(value != _newPasword) {
+        if(value != _aux) {
+          print(_aux);
           return 'Password confirmation most match new password';
         }
         return null;
