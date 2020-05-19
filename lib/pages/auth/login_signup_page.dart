@@ -75,7 +75,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
         print(userId);
 
         if(userId == null) {
-          _errorMessage = "The user could not be authentificated";
+          _errorMessage = "The user could not be authenticated";
         }
 
         if (userId.length > 0 && userId != null && _formMode == FormMode.LOGIN) {
