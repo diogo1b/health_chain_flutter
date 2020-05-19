@@ -17,15 +17,11 @@ class _DoctorHomePageState extends State<DoctorHomePage> {
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
-      'Index 0: Home',
+      'Index 0: Mis pacientes',
       style: optionStyle,
     ),
     Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
+      'Index 2: Mi perfil',
       style: optionStyle,
     ),
   ];
@@ -62,10 +58,6 @@ class _DoctorHomePageState extends State<DoctorHomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.business),
             title: Text('Business'),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            title: Text('School'),
           ),
         ],
         currentIndex: _selectedIndex,
