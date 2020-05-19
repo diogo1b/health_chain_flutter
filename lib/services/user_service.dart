@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:healthchainflutter/globals.dart' as globals;
 import 'package:http/http.dart' as http;
 
@@ -21,9 +22,21 @@ class UserService {
     final responseJson = json.decode(response.body);
 
     if(responseJson['succes'] == 'true') {
-      // Toast exito
+      Fluttertoast.showToast(
+          msg: "Password Updated",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          fontSize: 16.0
+      );
     } else {
-      // Toast falso
+      Fluttertoast.showToast(
+          msg: "Password could not be updated",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          fontSize: 16.0
+      );
     }
   }
 }
