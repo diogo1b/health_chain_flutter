@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:healthchainflutter/services/auth_service.dart';
 
+import '../../widgets/user_info.dart';
+
 class PacientHomePage extends StatefulWidget {
   PacientHomePage({Key key, this.onSignedOut}) : super(key : key);
 
@@ -15,7 +17,7 @@ class _PacientHomePageState extends State<PacientHomePage> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  static List<Widget> _widgetOptions = <Widget>[
     Text(
       'Index 0: Home',
       style: optionStyle,
@@ -24,10 +26,7 @@ class _PacientHomePageState extends State<PacientHomePage> {
       'Index 1: Business',
       style: optionStyle,
     ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+    UserInfo(),
   ];
 
   void _onItemTapped(int index) {
