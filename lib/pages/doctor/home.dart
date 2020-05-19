@@ -47,12 +47,12 @@ class _DoctorHomePageState extends State<DoctorHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
+            icon: Icon(Icons.collections_bookmark),
+            title: Text('Pacients'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            title: Text('Business'),
+            icon: Icon(Icons.person),
+            title: Text('Profile'),
           ),
         ],
         currentIndex: _selectedIndex,
