@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'globals.dart' as globals;
+import 'pages/auth/root_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: _title,
-      //home: new RootPage(auth: new Auth(),),
+      home: new RootPage(),
     );
   }
+}
