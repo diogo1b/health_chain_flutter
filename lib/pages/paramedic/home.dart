@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:healthchainflutter/services/auth_service.dart';
 import 'package:healthchainflutter/widgets/user_info.dart';
 
+import 'pacient_page.dart';
+
 class ParamedicHomePage extends StatefulWidget {
   ParamedicHomePage({Key key, this.onSignedOut}) : super(key : key);
 
@@ -16,8 +18,7 @@ class _ParamedicHomePageState extends State<ParamedicHomePage> {
   int _selectedIndex = 0;
 
   final _pageOptions = [
-    UserInfo(),
-    UserInfo(),
+    PacientPage(),
     UserInfo(),
   ];
 
