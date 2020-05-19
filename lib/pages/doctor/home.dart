@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthchainflutter/services/auth_service.dart';
+import 'package:healthchainflutter/widgets/user_info.dart';
 
 class DoctorHomePage extends StatefulWidget {
   DoctorHomePage({Key key, this.onSignedOut}) : super(key : key);
@@ -19,6 +20,12 @@ class _DoctorHomePageState extends State<DoctorHomePage> {
     UserInfo(),
     UserInfo(),
   ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
