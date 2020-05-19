@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:healthchainflutter/services/auth_service.dart';
 import 'package:healthchainflutter/pages/widgets/user_info.dart';
+
+import 'appointments_page.dart';
+import 'emergency_info_page.dart';
+
 class PacientHomePage extends StatefulWidget {
   PacientHomePage({Key key, this.onSignedOut}) : super(key : key);
 
@@ -15,8 +19,8 @@ class _PacientHomePageState extends State<PacientHomePage> {
   int _selectedIndex = 0;
 
   final _pageOptions = [
-    UserInfo(),
-    UserInfo(),
+    EmergencyInfoPage(),
+    AppointmentsPage(),
     UserInfo(),
   ];
 
@@ -49,7 +53,7 @@ class _PacientHomePageState extends State<PacientHomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.library_books),
-            title: Text('Appintments'),
+            title: Text('Appointments'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

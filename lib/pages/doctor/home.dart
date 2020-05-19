@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:healthchainflutter/services/auth_service.dart';
 import 'package:healthchainflutter/pages/widgets/user_info.dart';
+
+import 'pacients_page.dart';
+
 class DoctorHomePage extends StatefulWidget {
   DoctorHomePage({Key key, this.onSignedOut}) : super(key : key);
 
@@ -15,8 +18,7 @@ class _DoctorHomePageState extends State<DoctorHomePage> {
   int _selectedIndex = 0;
 
   final _pageOptions = [
-    UserInfo(),
-    UserInfo(),
+    PacientsPage(),
     UserInfo(),
   ];
 
@@ -46,12 +48,12 @@ class _DoctorHomePageState extends State<DoctorHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Home'),
+            icon: Icon(Icons.collections_bookmark),
+            title: Text('Pacients'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            title: Text('Business'),
+            icon: Icon(Icons.person),
+            title: Text('Profile'),
           ),
         ],
         currentIndex: _selectedIndex,
