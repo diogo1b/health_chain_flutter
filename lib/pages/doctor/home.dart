@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:healthchainflutter/services/auth_service.dart';
 
 class DoctorHomePage extends StatefulWidget {
+  DoctorHomePage({Key key, this.onSignedOut}) : super(key : key);
+
+  final AuthService authService = AuthService();
+  final VoidCallback onSignedOut;
 
   @override
   _DoctorHomePageState createState() => _DoctorHomePageState();
@@ -38,6 +43,12 @@ class _DoctorHomePageState extends State<DoctorHomePage> {
         title: const Text('HealthChain'),
         centerTitle: true,
         backgroundColor: Color.fromRGBO(36, 51, 126, 1.0),
+        actions: <Widget>[
+          new FlatButton(
+            child: new Icon(Icons.exit_to_app, color: Colors.white),
+            onPressed: _signOut,
+          )
+        ],
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -62,5 +73,14 @@ class _DoctorHomePageState extends State<DoctorHomePage> {
         onTap: _onItemTapped,
       ),
     );
+  }
+
+  _signOut() async {
+    try {
+      await widget.authService.signOut();
+      widget.onSignedOut();
+    } catch (e) {
+      print(e);
+    }
   }
 }
