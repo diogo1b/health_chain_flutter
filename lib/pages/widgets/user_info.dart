@@ -12,52 +12,72 @@ class UserInfo extends StatefulWidget{
 class _UserInfoState extends State<UserInfo>{
   @override
   Widget build(BuildContext context){
-    return ListView(
-        shrinkWrap: true,
-        padding: EdgeInsets.all(15.0),
-        children: <Widget>[
-          Text(
-            'Nombre',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0)
+    return Column(
+      children: <Widget>[
+        Expanded(
+          child: ListView(
+            shrinkWrap: true,
+            padding: EdgeInsets.all(15.0),
+            children: <Widget>[
+              Text(
+                'Nombre',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0)
+              ),
+              Text(
+                globals.user.name,
+                style: TextStyle(
+                  fontSize: 18.0
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 8.0
+                ),
+                child: Text(
+                  'Correo',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0)
+                ),
+              ),
+              Text(
+                globals.user.email,
+                style: TextStyle(
+                  fontSize: 18.0
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 8.0
+                ),
+                child: Text(
+                  'Rol de usuario',
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0)
+                ),
+              ),
+              Text(
+                globals.user.role,
+                style: TextStyle(
+                  fontSize: 18.0
+                ),
+              ),
+            ],
           ),
-          Text(
-            globals.user.name,
-            style: TextStyle(
-              fontSize: 18.0
-            ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(
+            bottom: 10
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 8.0
-            ),
-            child: Text(
-              'Correo',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0)
-            ),
+          child: RaisedButton(
+            textColor: Colors.white,
+            color: Color.fromRGBO(104, 202, 184, 1),
+            padding: const EdgeInsets.all(5.0),
+            onPressed: () {
+              
+            },
+            child: const Text('Editar información')
           ),
-          Text(
-            globals.user.email,
-            style: TextStyle(
-              fontSize: 18.0
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 8.0
-            ),
-            child: Text(
-              'Rol de usuario',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0)
-            ),
-          ),
-          Text(
-            globals.user.role,
-            style: TextStyle(
-              fontSize: 18.0
-            ),
-          ),
-        ],
-      );
+        )
+      ],
+    );
   }
 
   _changePass() {
