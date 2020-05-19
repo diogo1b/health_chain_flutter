@@ -62,6 +62,6 @@ class AuthService {
   }
 
   Future<User> getCurrentUser() async {
-   return globals.user;
+    return globals.user;
   }
 }
