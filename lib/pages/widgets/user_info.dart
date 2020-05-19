@@ -22,4 +22,12 @@ class _UserInfoState extends State<UserInfo>{
       ),
     );
   }
+
+  _changePass() {
+  
+  }
+
+  _showAbout() {
+
+  }
 }
