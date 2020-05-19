@@ -62,29 +62,36 @@ class _UserInfoState extends State<UserInfo>{
             ],
           ),
         ),
-        RaisedButton(
-          textColor: Colors.white,
-          color: Color.fromRGBO(104, 202, 184, 1),
-          padding: const EdgeInsets.all(5.0),
-          onPressed: () {
-            _changePass();
-          },
-          child: const Text('Cambiar contraseña')
+        ButtonTheme(
+          minWidth: 220,
+          child: RaisedButton(
+            textColor: Colors.white,
+            shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+            color: Color.fromRGBO(104, 202, 184, 1),
+            padding: const EdgeInsets.all(5.0),
+            onPressed: () {
+              _changePass();
+            },
+            child: const Text('Cambiar contraseña')
+          )
         ),
         Padding(
           padding: const EdgeInsets.only(
             bottom: 10
           ),
-          child: RaisedButton(
-            shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-            elevation: 5.0,
-            textColor: Colors.white,
-            color: Color.fromRGBO(104, 202, 184, 1),
-            padding: const EdgeInsets.all(5.0),
-            onPressed: () {
-              _showAbout();
-            },
-            child: const Text('Acerca de HealthChain')
+          child: ButtonTheme(
+            minWidth: 220,
+            child: RaisedButton(
+              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+              elevation: 5.0,
+              textColor: Colors.white,
+              color: Color.fromRGBO(180, 180, 180, 1),
+              padding: const EdgeInsets.all(5.0),
+              onPressed: () {
+                _showAbout();
+              },
+              child: const Text('Acerca de HealthChain')
+            )
           ),
         )
       ],
