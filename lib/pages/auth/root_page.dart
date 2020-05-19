@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:healthchainflutter/services/auth_service.dart';
 import 'package:healthchainflutter/globals.dart' as globals;
 
-import '../../home.dart';
+import '../doctor/home.dart';
 import 'login_signup_page.dart';
 
 class RootPage extends StatefulWidget {
@@ -103,11 +103,18 @@ class _RootPageState extends State<RootPage> {
         break;
       case AuthStatus.LOGGED_IN:
         if (_userId.length > 0 && _userId != null) {
-          print("Global name");
           print(globals.user.name);
           print("Global role");
           print(globals.user.role);
-          return new HomePage();
+          if(globals.user.role == "user") {
+            return new DoctorHomePage();
+          }
+          if(globals.user.role == "paramedic") {
+            return new DoctorHomePage();
+          }
+          if(globals.user.role == "doctor") {
+            return new DoctorHomePage();
+          }
         } else return _buildWaitingScreen();
         break;
       default:
