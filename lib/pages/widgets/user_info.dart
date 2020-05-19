@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:healthchainflutter/services/auth_service.dart';
+import 'package:healthchainflutter/pages/widgets/about_us_page.dart';
+import 'package:healthchainflutter/pages/widgets/change_password_page.dart';
 import 'package:healthchainflutter/globals.dart' as globals;
 
 class UserInfo extends StatefulWidget{
