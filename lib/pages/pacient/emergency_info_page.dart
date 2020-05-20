@@ -33,7 +33,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
               color: Color.fromRGBO(104, 202, 184, 1),
               padding: const EdgeInsets.all(5.0),
               onPressed: () {
-                
+                _updateEmergencyIngo();
               },
               child: const Text('Cambiar contraseña')
             )
@@ -42,18 +42,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
       ),
     );
   }
-
-  Widget _addButton() {
-    return new FloatingActionButton(
-      onPressed: (){
-        _updateEmergencyIngo();
-      },
-      tooltip: 'Add_Funko_List',
-      backgroundColor: Colors.deepPurpleAccent,
-      child: new Icon(Icons.add),
-    );
-  }
-
+  
   _updateEmergencyIngo() {
     Navigator.of(context)
         .push(MaterialPageRoute(
