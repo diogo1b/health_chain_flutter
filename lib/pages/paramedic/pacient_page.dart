@@ -12,12 +12,13 @@ class PacientPage extends StatefulWidget {
 
 class _PacientPageState extends State<PacientPage> {
 
-  Emergency_Info emergency_info = Emergency_Info("this.name", "this.age", "this.blood_type", "this.weight", "this.height", "this.e_contact_name", "this.e_contact_phone", "this.e_relationship", "this.mecical_condition", "this.allergies", "this.hospital");
+  Emergency_Info emergency_info = Emergency_Info(null, null, null, null, null, null, null, null, null, null, null);
+  String text_filter = "";
 
   @override
   void initState() {
     super.initState();
-    widget.paramedicService.getUserEmergencyInfo("diogo5@diogo5.com").then((_emergency_info) {
+    widget.paramedicService.getUserEmergencyInfo(text_filter).then((_emergency_info) {
       setState(() {
         emergency_info = _emergency_info;
       });
@@ -29,6 +30,20 @@ class _PacientPageState extends State<PacientPage> {
     return Scaffold(
       body: Column(
         children: <Widget>[
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: TextFormField(
+              initialValue: text_filter,
+              decoration:
+              InputDecoration(
+                  icon: Icon(Icons.search)
+              ),
+              onChanged: (text) {
+                text_filter = text;
+                _filter();
+              },
+            ),
+          ),
           Expanded(
             child: ListView(
               shrinkWrap: true,
@@ -364,4 +379,11 @@ class _PacientPageState extends State<PacientPage> {
   _getEmergencyIngo() {
     widget.paramedicService.getUserEmergencyInfo("email");
   }
+
+  _filter() {
+    widget.paramedicService.getUserEmergencyInfo(text_filter).then((_emergency_info) {
+      setState(() {
+        emergency_info = _emergency_info;
+      });
+    });}
 }

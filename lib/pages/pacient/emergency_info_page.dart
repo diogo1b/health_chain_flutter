@@ -15,7 +15,8 @@ class EmergencyInfoPage extends StatefulWidget {
 
 class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
 
-  Emergency_Info emergency_info = Emergency_Info("this.name", "this.age", "this.blood_type", "this.weight", "this.height", "this.e_contact_name", "this.e_contact_phone", "this.e_relationship", "this.mecical_condition", "this.allergies", "this.hospital");
+  Emergency_Info emergency_info = Emergency_Info(null, null, null, null, null, null, null, null, null, null, null);
+
 
   @override
   void initState() {
