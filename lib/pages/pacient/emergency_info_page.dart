@@ -48,18 +48,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
       ),
     );
   }
-
-  Widget _addButton() {
-    return new FloatingActionButton(
-      onPressed: (){
-        _updateEmergencyIngo();
-      },
-      tooltip: 'Add_Funko_List',
-      backgroundColor: Colors.deepPurpleAccent,
-      child: new Icon(Icons.add),
-    );
-  }
-
+  
   _updateEmergencyIngo() {
     Navigator.of(context)
         .push(MaterialPageRoute(
