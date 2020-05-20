@@ -200,7 +200,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                   TextSpan(
                     children: <InlineSpan>[
                       TextSpan(
-                        text: 'Nombre',
+                        text: 'Contact name',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0
@@ -225,7 +225,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                   TextSpan(
                     children: <InlineSpan>[
                       TextSpan(
-                        text: 'Phone',
+                        text: 'Contact phone',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0
@@ -253,7 +253,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: 'Relationship',
+                        text: 'Relationship with contact',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0
