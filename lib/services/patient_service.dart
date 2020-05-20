@@ -111,4 +111,41 @@ class PatientService {
       return doctor_list;
     }
   }
+
+  Future<void>deactivateDoctor(String doctor_id , bool active) async {
+    var body = json.encode(
+        {
+          'doctor_id' : doctor_id,
+          'active' : active
+        });
+
+    Map<String, String> headers = {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': globals.user.token
+    };
+
+    final response =
+        await http.post(
+        globals.API_URL + "/user/my_doctors", body: body, headers: headers);
+    final responseJson = json.decode(response.body);
+
+    if(responseJson['success'] == 'true') {
+      Fluttertoast.showToast(
+          msg: "You have deactivated you Dr.",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          fontSize: 16.0
+      );
+    } else {
+      Fluttertoast.showToast(
+          msg: "Failed to deactivate !!!!",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          fontSize: 16.0
+      );
+    }
+  }
 } 
