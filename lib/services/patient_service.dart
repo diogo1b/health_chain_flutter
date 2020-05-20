@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:healthchainflutter/globals.dart' as globals;
+import 'package:healthchainflutter/models/Doctor.dart';
 import 'package:healthchainflutter/models/Emergency_Info.dart';
 import 'package:http/http.dart' as http;
 
@@ -74,6 +75,35 @@ class PatientService {
     } else {
       var emergency_info = responseJson['user']['_emergency_info'];
       return Emergency_Info(emergency_info['name'], emergency_info['age'], emergency_info['blood_type'], emergency_info['weight'], emergency_info['height'], emergency_info['e_contact_name'], emergency_info['e_contact_phone'], emergency_info['e_relationship'], emergency_info['medical_condition'], emergency_info['allergies'], emergency_info['preferred_hospital']);
+    }
+  }
+
+  Future<List> getDoctors() async {
+
+    List<Doctor> doctor_list = [];
+
+    Map<String, String> headers = {
+      'Content-type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': globals.user.token
+    };
+
+    final response =
+        await http.get(
+        globals.API_URL + "/user/my_doctors", headers: headers);
+    final responseJson = json.decode(response.body);
+
+    if(responseJson['succes'] == "false") {
+      return doctor_list;
+    } else {
+      var my_doctors = responseJson['my_doctors'];
+
+      for(var i in my_doctors) {
+        Doctor dr = Doctor(my_doctors[i]['id'], my_doctors[i]['name'], my_doctors[i]['active']);
+        doctor_list.add(dr);
+      }
+
+      return doctor_list;
     }
   }
 } 
