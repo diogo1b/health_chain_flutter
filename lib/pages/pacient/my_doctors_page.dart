@@ -8,6 +8,14 @@ class MyDoctorsPage extends StatefulWidget{
 
 class _MyDoctorsPageState extends State<MyDoctorsPage>{
 
+
+  Widget _doctorTile(String name, bool active){
+    return ListTile(
+      leading: Text(name),
+      trailing: Text('Activo '+active.toString()),
+    );
+  }
+
   @override
   Widget build(BuildContext context){
     return Scaffold(
@@ -18,9 +26,10 @@ class _MyDoctorsPageState extends State<MyDoctorsPage>{
       ),
       body: Container(
         margin: EdgeInsets.all(24),
-        child: Column(
+        child: ListView(
+          shrinkWrap: true,
           children: <Widget>[
-            Text('my doctors')
+            _doctorTile('name', true)
           ],
         ),
       )
