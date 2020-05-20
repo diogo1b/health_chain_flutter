@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:healthchainflutter/models/Emergency_Info.dart';
 import 'package:healthchainflutter/services/patient_service.dart';
 import 'package:healthchainflutter/services/user_service.dart';
 
 class UpdateEmergencyInfoPage extends StatefulWidget{
+  UpdateEmergencyInfoPage(this.emergency_info);
+
+  Emergency_Info emergency_info;
   final PatientService patientService = PatientService();
 
   @override
@@ -84,6 +88,7 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
     return Container (
       padding: EdgeInsets.symmetric(vertical : 0),
       child: TextFormField(
+        initialValue: widget.emergency_info.name,
         decoration: InputDecoration(labelText: 'Name'),
         validator: (String value) {
           if (value.isEmpty) {
@@ -102,6 +107,7 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
     return Container (
       padding: EdgeInsets.symmetric(vertical : 0),
       child: TextFormField(
+        initialValue: widget.emergency_info.hospital,
         decoration: InputDecoration(labelText: 'Preferred Hospital'),
         validator: (String value) {
           if (value.isEmpty) {
@@ -119,6 +125,7 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
     return Container(
       padding: EdgeInsets.symmetric(vertical : 5),
       child: TextFormField(
+        initialValue: widget.emergency_info.age,
         decoration: InputDecoration(labelText: 'Age'),
         validator: (String value) {
           if (value.isEmpty) {
@@ -140,6 +147,7 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
     return Container(
       padding: EdgeInsets.symmetric(vertical : 5),
       child: TextFormField(
+        initialValue: widget.emergency_info.blood_type,
         decoration: InputDecoration(labelText: 'Blood Type'),
         validator: (String value) {
           if (value.isEmpty) {
@@ -158,6 +166,7 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
     return Container(
       padding: EdgeInsets.symmetric(vertical : 5),
       child: TextFormField(
+        initialValue: widget.emergency_info.weight,
         decoration: InputDecoration(labelText: 'Weight'),
         validator: (String value) {
           if (value.isEmpty) {
@@ -177,6 +186,7 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
     return Container(
       padding: EdgeInsets.symmetric(vertical : 5),
       child: TextFormField(
+        initialValue: widget.emergency_info.height,
         decoration: InputDecoration(labelText: 'Height'),
         validator: (String value) {
           if (value.isEmpty) {
@@ -196,6 +206,7 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
     return Container(
       padding: EdgeInsets.symmetric(vertical : 5),
       child: TextFormField(
+        initialValue: widget.emergency_info.e_contact_name,
         decoration: InputDecoration(labelText: 'Emergency Contact Name'),
         validator: (String value) {
           if (value.isEmpty) {
@@ -214,6 +225,7 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
     return Container(
       padding: EdgeInsets.symmetric(vertical : 5),
       child: TextFormField(
+        initialValue: widget.emergency_info.e_contact_phone,
         decoration: InputDecoration(labelText: 'Emergency Contact Phone'),
         validator: (String value) {
           if (value.isEmpty) {
@@ -232,6 +244,7 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
     return Container (
       padding:  EdgeInsets.symmetric(vertical : 5),
       child: TextFormField(
+        initialValue: widget.emergency_info.e_relationship,
         decoration: InputDecoration(labelText: 'Emergency Contact Relationship'),
         validator: (String value) {
           if (value.isEmpty) {
@@ -250,6 +263,7 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
     return Container(
       padding: EdgeInsets.symmetric(vertical : 5),
       child: TextFormField(
+        initialValue: widget.emergency_info.mecical_condition,
         maxLines: null,
         decoration: InputDecoration(labelText: 'Medical Conditions'),
         validator: (String value) {
@@ -269,6 +283,7 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
     return Container(
       padding: EdgeInsets.symmetric(vertical : 5),
       child: TextFormField(
+        initialValue: widget.emergency_info.allergies,
         maxLines: null,
         decoration: InputDecoration(labelText: 'Allergies'),
         validator: (String value) {

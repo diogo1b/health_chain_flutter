@@ -360,7 +360,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
   _updateEmergencyIngo() {
     Navigator.of(context)
         .push(MaterialPageRoute(
-      builder: (BuildContext context) => UpdateEmergencyInfoPage(),
+      builder: (BuildContext context) => UpdateEmergencyInfoPage(emergency_info),
     ));
   }
 }
