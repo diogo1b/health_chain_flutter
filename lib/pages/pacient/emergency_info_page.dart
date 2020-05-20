@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:healthchainflutter/models/Emergency_Info.dart';
 import 'package:healthchainflutter/pages/pacient/update_emergency_info.dart';
 import 'package:healthchainflutter/services/patient_service.dart';
 
@@ -13,6 +14,19 @@ class EmergencyInfoPage extends StatefulWidget {
 }
 
 class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
+
+  Emergency_Info emergency_info = Emergency_Info("this.name", "this.age", "this.blood_type", "this.weight", "this.height", "this.e_contact_name", "this.e_contact_phone", "this.e_relationship", "this.mecical_condition", "this.allergies");
+
+  @override
+  void initState() {
+    super.initState();
+    widget.patientService.getEmergencyInfo().then((_emergency_info) {
+      setState(() {
+        emergency_info = _emergency_info;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,7 +54,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: 'Jeff The Dirty',
+                        text: emergency_info.name,
                         style: TextStyle(
                           fontSize: 18.0
                         )
