@@ -27,7 +27,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                   TextSpan(
                     children: <InlineSpan>[
                       TextSpan(
-                        text: 'Nombre',
+                        text: 'Name',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0
@@ -40,7 +40,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: 'Jeff El Sucio',
+                        text: 'Jeff The Dirty',
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -52,7 +52,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                   TextSpan(
                     children: <InlineSpan>[
                       TextSpan(
-                        text: 'Edad',
+                        text: 'Age',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0
@@ -80,7 +80,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: 'Tipo de sangre',
+                        text: 'Blood type',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0
@@ -93,7 +93,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: 'Azul como príncipe',
+                        text: 'Royal blue',
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -105,7 +105,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                   TextSpan(
                     children: <InlineSpan>[
                       TextSpan(
-                        text: 'Peso',
+                        text: 'Weight',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0
@@ -118,7 +118,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: '150 toneladas',
+                        text: '150 tons',
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -133,7 +133,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: 'Altura',
+                        text: 'Height',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 18.0
@@ -146,7 +146,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: 'Putoscientos mil oschocientos noventa y tres millones cuatrocientos noventa y siete mil trescientos cincuenta y dos yotámetros',
+                        text: 'High asf boiiiiii',
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -167,7 +167,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                           ),
                           child: Center(
                             child: Text(
-                              'Contacto de emergencia',
+                              'Emergency contact',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Color.fromRGBO(51, 27, 119, 1),
@@ -228,7 +228,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                           )
                         ),
                         TextSpan(
-                          text: 'Papi 😫',
+                          text: 'Daddy 😫',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             decoration: TextDecoration.underline,
@@ -244,7 +244,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                     top: 16
                   ),
                   child: Text(
-                  'Hospital de preferencia',
+                  'Preferred hospital',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18.0
@@ -257,7 +257,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                     bottom: 8
                   ),
                   child: Text(
-                    'El consultorio del Dr. Simi',
+                    'Dr. Simi\'s',
                     style: TextStyle(
                       fontSize: 18.0
                     )
@@ -268,7 +268,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                     top: 8
                   ),
                   child: Text(
-                  'Condiciones médicas conocidas',
+                  'Known medical conditions',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18.0
@@ -281,7 +281,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                     bottom: 8
                   ),
                   child: Text(
-                    'Sífilis en el cáncer del coronaviru',
+                    'Syphilis in the Coronavirus cancer',
                     style: TextStyle(
                       fontSize: 18.0
                     )
@@ -292,7 +292,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                     top: 8
                   ),
                   child: Text(
-                  'Alergias conocidas',
+                  'Known allergies',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18.0
@@ -305,7 +305,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                     bottom: 8
                   ),
                   child: Text(
-                    'La abstinencia',
+                    'Abstinence',
                     style: TextStyle(
                       fontSize: 18.0
                     ),
@@ -330,7 +330,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                   _updateEmergencyIngo();
                 },
                 child: const Text(
-                  'Editar información de emergencia',
+                  'Update emergency information',
                   style: TextStyle(
                     fontSize: 18.0
                   )

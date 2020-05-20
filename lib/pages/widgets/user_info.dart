@@ -20,7 +20,7 @@ class _UserInfoState extends State<UserInfo>{
             padding: EdgeInsets.all(15.0),
             children: <Widget>[
               Text(
-                'Nombre',
+                'Name',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0)
               ),
               Text(
@@ -34,7 +34,7 @@ class _UserInfoState extends State<UserInfo>{
                   top: 8.0
                 ),
                 child: Text(
-                  'Correo',
+                  'Email',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0)
                 ),
               ),
@@ -49,7 +49,7 @@ class _UserInfoState extends State<UserInfo>{
                   top: 8.0
                 ),
                 child: Text(
-                  'Rol de usuario',
+                  'User role',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0)
                 ),
               ),
@@ -74,7 +74,7 @@ class _UserInfoState extends State<UserInfo>{
               _changePass();
             },
             child: const Text(
-              'Cambiar contraseña',
+              'Change password',
               style: TextStyle(
                 fontSize: 18.0
               )
@@ -97,7 +97,7 @@ class _UserInfoState extends State<UserInfo>{
                 _showAbout();
               },
               child: const Text(
-                'Acerca de HealthChain',
+                'About HealthChain',
                 style: TextStyle(
                   fontSize: 18.0
                 )
