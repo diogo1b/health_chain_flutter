@@ -66,7 +66,7 @@ class DoctorService {
     }
   }
 
-  Future<void> getPatients() async {
+  Future<List> getPatients() async {
     List<Patient> patient_list = [];
 
     Map<String, String> headers = {
