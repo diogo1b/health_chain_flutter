@@ -12,7 +12,7 @@ class PacientPage extends StatefulWidget {
 
 class _PacientPageState extends State<PacientPage> {
 
-  Emergency_Info emergency_info = Emergency_Info("this.name", "this.age", "this.blood_type", "this.weight", "this.height", "this.e_contact_name", "this.e_contact_phone", "this.e_relationship", "this.mecical_condition", "this.allergies");
+  Emergency_Info emergency_info = Emergency_Info("this.name", "this.age", "this.blood_type", "this.weight", "this.height", "this.e_contact_name", "this.e_contact_phone", "this.e_relationship", "this.mecical_condition", "this.allergies", "this.hospital");
 
   @override
   void initState() {

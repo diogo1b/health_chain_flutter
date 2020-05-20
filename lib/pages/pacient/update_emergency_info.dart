@@ -22,6 +22,7 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
   String _e_relationship;
   String _mecical_conditions;
   String _allergies;
+  String _hospital;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +48,7 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
                   _buildECName(),
                   _buildECPhone(),
                   _buildECRelationship(),
+                  _buildHospital(),
                   _buildMedicalConditions(),
                   _buildAllergies(),
                   SizedBox(height: 15.0),
@@ -96,6 +98,23 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
     );
   }
 
+  Widget _buildHospital() {
+    return Container (
+      padding: EdgeInsets.symmetric(vertical : 0),
+      child: TextFormField(
+        decoration: InputDecoration(labelText: 'Preferred Hospital'),
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'Hospital is Required';
+          }
+          return null;
+        },
+        onSaved: (String value) {
+          _hospital = value;
+        },
+      ),
+    );
+  }
   Widget _buildAge() {
     return Container(
       padding: EdgeInsets.symmetric(vertical : 5),
@@ -266,7 +285,7 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
   }
 
   _updateEmergencyInfo() {
-    widget.patientService.updateEmergencyInfo(_name, _age, _blood_type, _weight, _height, _e_contact_name, _e_contact_phone, _e_relationship, _mecical_conditions, _allergies);
+    widget.patientService.updateEmergencyInfo(_name, _age, _blood_type, _weight, _height, _e_contact_name, _e_contact_phone, _e_relationship, _mecical_conditions, _allergies, _hospital);
     Navigator.pop(context);
   }
 }
