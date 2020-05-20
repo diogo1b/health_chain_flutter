@@ -88,7 +88,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage>{
           return 'New Passwrod is Required';
         }
         if (value.length < 6 ){
-          return 'Passwrod most have than 6 characters';
+          return 'Passwrod must have than 6 characters';
         }
         return null;
       },
@@ -107,11 +107,11 @@ class _ChangePasswordPageState extends State<ChangePasswordPage>{
           return 'New Password Confirmation is Required';
         }
         if (value.length < 6 ){
-          return 'Passwrod most have than 6 characters';
+          return 'Passwrod must have than 6 characters';
         }
         if(value != _aux) {
           print(_aux);
-          return 'Password confirmation most match new password';
+          return 'Password confirmation must match new password';
         }
         return null;
       },
