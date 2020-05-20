@@ -66,8 +66,8 @@ class DoctorService {
     }
   }
 
-  Future<void> getPatients() async {
-    List<Patient> funkoList = [];
+  Future<List> getPatients() async {
+    List<Patient> patient_list = [];
 
     Map<String, String> headers = {
       'Content-type': 'application/json',
@@ -80,7 +80,16 @@ class DoctorService {
         globals.API_URL + "/doctor/get_patients", headers: headers);
     final responseJson = json.decode(response.body);
 
-    print(responseJson);
+    if(responseJson['succes'] == "false") {
+      return patient_list;
+    } else {
+      var my_patients = responseJson['my_patients'];
 
+      for(var i in my_patients) {
+        Patient patient = Patient(my_patients[i]['id'], my_patients[i]['name'], my_patients[i]['active']);
+        my_patients.add(patient);
+      }
+      return patient_list;
+    }
   }
 }
