@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:healthchainflutter/models/Emergency_Info.dart';
 import 'package:healthchainflutter/services/paramedic_service.dart';
 
 class PacientPage extends StatefulWidget {
@@ -10,6 +11,19 @@ class PacientPage extends StatefulWidget {
 }
 
 class _PacientPageState extends State<PacientPage> {
+
+  Emergency_Info emergency_info = Emergency_Info("this.name", "this.age", "this.blood_type", "this.weight", "this.height", "this.e_contact_name", "this.e_contact_phone", "this.e_relationship", "this.mecical_condition", "this.allergies");
+
+  @override
+  void initState() {
+    super.initState();
+    widget.paramedicService.getUserEmergencyInfo("diogo5@diogo5.com").then((_emergency_info) {
+      setState(() {
+        emergency_info = _emergency_info;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
