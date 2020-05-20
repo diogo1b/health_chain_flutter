@@ -51,7 +51,7 @@ class _PacientPageState extends State<PacientPage> {
                         )
                       ),
                       TextSpan(
-                        text: 'Jeff The Dirty',
+                        text: emergency_info.name,
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -76,7 +76,7 @@ class _PacientPageState extends State<PacientPage> {
                         )
                       ),
                       TextSpan(
-                        text: '150',
+                        text: emergency_info.age,
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -104,7 +104,7 @@ class _PacientPageState extends State<PacientPage> {
                         )
                       ),
                       TextSpan(
-                        text: 'Royal blue',
+                        text: emergency_info.blood_type,
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -129,7 +129,7 @@ class _PacientPageState extends State<PacientPage> {
                         )
                       ),
                       TextSpan(
-                        text: '150 tons',
+                        text: emergency_info.weight,
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -157,7 +157,7 @@ class _PacientPageState extends State<PacientPage> {
                         )
                       ),
                       TextSpan(
-                        text: 'High asf boiiiiii',
+                        text: emergency_info.height,
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -202,7 +202,7 @@ class _PacientPageState extends State<PacientPage> {
                               top: 16
                             ),
                             child: Text(
-                              'Jaime Rodríguez El Bronco',
+                              emergency_info.e_contact_name,
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 decoration: TextDecoration.underline,
@@ -220,7 +220,7 @@ class _PacientPageState extends State<PacientPage> {
                     TextSpan(
                       children: <InlineSpan>[
                         TextSpan(
-                          text: '1122334455',
+                          text: emergency_info.e_contact_phone,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             decoration: TextDecoration.underline,
@@ -239,7 +239,7 @@ class _PacientPageState extends State<PacientPage> {
                           )
                         ),
                         TextSpan(
-                          text: 'Daddy 😫',
+                          text: emergency_info.e_relationship,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             decoration: TextDecoration.underline,
@@ -292,7 +292,7 @@ class _PacientPageState extends State<PacientPage> {
                     bottom: 8
                   ),
                   child: Text(
-                    'Syphilis in the Coronavirus cancer',
+                    emergency_info.mecical_condition,
                     style: TextStyle(
                       fontSize: 18.0
                     )
@@ -316,7 +316,7 @@ class _PacientPageState extends State<PacientPage> {
                     bottom: 8
                   ),
                   child: Text(
-                    'Abstinence',
+                    emergency_info.allergies,
                     style: TextStyle(
                       fontSize: 18.0
                     ),
@@ -324,7 +324,7 @@ class _PacientPageState extends State<PacientPage> {
                 ),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
