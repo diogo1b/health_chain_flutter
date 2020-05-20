@@ -69,6 +69,6 @@ class PatientService {
     var emergency_info = responseJson['user']['_emergency_info'];
     print(emergency_info);
 
-    return Emergency_Info(emergency_info['name'], emergency_info['age'], emergency_info['blood_type'], emergency_info['weight'], emergency_info['height'], emergency_info['e_contact_name'], emergency_info['e_contact_phone'], emergency_info['e_relationship'], emergency_info['this.mecical_condition'], emergency_info['allergies'], emergency_info['hospital']);
+    return Emergency_Info(emergency_info['name'], emergency_info['age'], emergency_info['blood_type'], emergency_info['weight'], emergency_info['height'], emergency_info['e_contact_name'], emergency_info['e_contact_phone'], emergency_info['e_relationship'], emergency_info['medical_condition'], emergency_info['allergies'], emergency_info['hospital']);
   }
 }
