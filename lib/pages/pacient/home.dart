@@ -53,7 +53,7 @@ class _PacientHomePageState extends State<PacientHomePage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.library_books),
-            title: Text('Appointments'),
+            title: Text('Medical History'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
