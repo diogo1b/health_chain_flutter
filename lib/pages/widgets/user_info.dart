@@ -73,7 +73,12 @@ class _UserInfoState extends State<UserInfo>{
             onPressed: () {
               _changePass();
             },
-            child: const Text('Cambiar contraseña')
+            child: const Text(
+              'Cambiar contraseña',
+              style: TextStyle(
+                fontSize: 18.0
+              )
+            )
           )
         ),
         Padding(
@@ -91,7 +96,12 @@ class _UserInfoState extends State<UserInfo>{
               onPressed: () {
                 _showAbout();
               },
-              child: const Text('Acerca de HealthChain')
+              child: const Text(
+                'Acerca de HealthChain',
+                style: TextStyle(
+                  fontSize: 18.0
+                )
+              )
             )
           ),
         )
