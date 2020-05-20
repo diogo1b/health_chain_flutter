@@ -271,7 +271,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                     bottom: 8
                   ),
                   child: Text(
-                    'Dr. Simi\'s',
+                    emergency_info.hospital,
                     style: TextStyle(
                       fontSize: 18.0
                     )
