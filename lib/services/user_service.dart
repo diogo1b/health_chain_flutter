@@ -7,10 +7,6 @@ class UserService {
 
   Future<void> updatePass(_password, _newPassword) async {
 
-    print("hoghkogkhogkhogkhkgoh");
-    print(_password);
-    print(_newPassword);
-
     var body = json.encode(
         {
           "password": _password,
@@ -23,13 +19,9 @@ class UserService {
       'Authorization' : globals.user.token
     };
 
-    print(globals.user.token);
-
     final response =
     await http.post(globals.API_URL+"/change_password", body: body, headers: headers);
     final responseJson = json.decode(response.body);
-
-    print(responseJson);
 
     if(responseJson['succes'] == 'true') {
       Fluttertoast.showToast(
