@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:healthchainflutter/services/doctor.dart';
+import 'package:healthchainflutter/services/doctor_service.dart';
 
 class PacientsPage extends StatefulWidget {
 

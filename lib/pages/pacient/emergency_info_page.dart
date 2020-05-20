@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthchainflutter/pages/pacient/update_emergency_info.dart';
-import 'package:healthchainflutter/services/patient.dart';
+import 'package:healthchainflutter/services/patient_service.dart';
 
 class EmergencyInfoPage extends StatefulWidget {
 

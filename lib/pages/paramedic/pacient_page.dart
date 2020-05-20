@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:healthchainflutter/services/paramedic.dart';
+import 'package:healthchainflutter/services/paramedic_service.dart';
 
 class PacientPage extends StatefulWidget {
 

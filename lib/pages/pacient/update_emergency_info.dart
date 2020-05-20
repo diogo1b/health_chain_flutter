@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:healthchainflutter/services/patient_service.dart';
 import 'package:healthchainflutter/services/user_service.dart';
 
 class UpdateEmergencyInfoPage extends StatefulWidget{
-  final UserService userService = UserService();
+  final PatientService patientService = PatientService();
 
   @override
   State<StatefulWidget> createState() => new _UpdateEmergencyInfoPageState();
@@ -11,10 +12,16 @@ class UpdateEmergencyInfoPage extends StatefulWidget{
 class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  String _password;
-  String _newPasword;
-  String _newPasswordConfirmation;
-  String _aux;
+  String _name;
+  String _age;
+  String _blood_type;
+  String _weight;
+  String _height;
+  String _e_contact_name;
+  String _e_contact_phone;
+  String _e_relationship;
+  String _mecical_conditions;
+  String _allergies;
 
   @override
   Widget build(BuildContext context) {
@@ -30,99 +37,235 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
           key: _formKey,
           child: ListView(
             children: <Widget>[
-              _buildCurrentPassword(),
-              _buildNewPassword(),
-              _buildNewPasswordConfirmation(),
-              SizedBox(height: 15.0),
-              RaisedButton(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12.0),
-                ),
-                child: Text(
-                  'Change Password',
-                  style: TextStyle(color: Colors.white, fontSize: 16),
-                ),
-                color:  Color.fromRGBO(104, 202, 184, 1.0),
-                onPressed: () {
-                  if (!_formKey.currentState.validate()) {
-                    return;
-                  }
-                  _formKey.currentState.save();
-                  print("object");
+              Column(
+                children: <Widget>[
+                  _buildName(),
+                  _buildAge(),
+                  _buildBloodType(),
+                  _buildWeight(),
+                  _buildHeight(),
+                  _buildECName(),
+                  _buildECPhone(),
+                  _buildECRelationship(),
+                  _buildMedicalConditions(),
+                  _buildAllergies(),
+                  SizedBox(height: 15.0),
+                  RaisedButton(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
+                    child: Text(
+                      'Update Information',
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                    color:  Color.fromRGBO(104, 202, 184, 1.0),
+                    onPressed: () {
+                      if (!_formKey.currentState.validate()) {
+                        return;
+                      }
+                      _formKey.currentState.save();
+                      print("object");
 
-                  _updatePassword();
-                },
+                      _updateEmergencyInfo();
+                    },
+                  ),
+                ],
               )
             ],
-          ),
+          )
         ),
       ),
     );
   }
 
-  Widget _buildCurrentPassword() {
-    return TextFormField(
-      decoration: InputDecoration(labelText: 'Current Password'),
-      maxLength: 30,
-      validator: (String value) {
-        if (value.isEmpty) {
-          return 'Passwrod is Required';
-        }
-        return null;
-      },
-      onSaved: (String value) {
-        _password = value;
-      },
+  Widget _buildName() {
+    return Container (
+      padding: EdgeInsets.symmetric(vertical : 0),
+      child: TextFormField(
+        decoration: InputDecoration(labelText: 'Name'),
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'Name is Required';
+          }
+          return null;
+        },
+        onSaved: (String value) {
+          _name = value;
+        },
+      ),
     );
   }
 
-  Widget _buildNewPassword() {
-    return TextFormField(
-      decoration: InputDecoration(labelText: 'New Password'),
-      maxLength: 30,
-      onChanged: (text) {
-        _aux = text;
-      },
-      validator: (String value) {
-        if (value.isEmpty) {
-          return 'New Passwrod is Required';
-        }
-        if (value.length < 6 ){
-          return 'Passwrod most have than 6 characters';
-        }
-        return null;
-      },
-      onSaved: (String value) {
-        _newPasword = value;
-      },
+  Widget _buildAge() {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical : 5),
+      child: TextFormField(
+        decoration: InputDecoration(labelText: 'Age'),
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'Age is Required';
+          }
+          if(value.length > 3) {
+            return 'Age cannot be of four digits';
+          }
+          return null;
+        },
+        onSaved: (String value) {
+          _age = value;
+        },
+      ),
     );
   }
 
-  Widget _buildNewPasswordConfirmation() {
-    return TextFormField(
-      decoration: InputDecoration(labelText: 'New Password Confirmation'),
-      maxLength: 30,
-      validator: (String value) {
-        if (value.isEmpty) {
-          return 'New Password Confirmation is Required';
-        }
-        if (value.length < 6 ){
-          return 'Passwrod most have than 6 characters';
-        }
-        if(value != _aux) {
-          print(_aux);
-          return 'Password confirmation most match new password';
-        }
-        return null;
-      },
-      onSaved: (String value) {
-        _newPasswordConfirmation = value;
-      },
+  Widget _buildBloodType() {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical : 5),
+      child: TextFormField(
+        decoration: InputDecoration(labelText: 'Blood Type'),
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'Blood Type is Required';
+          }
+          return null;
+        },
+        onSaved: (String value) {
+          _blood_type = value;
+        },
+      ),
     );
   }
 
-  _updatePassword() {
-    widget.userService.updatePass(_password, _newPasword);
-    Navigator.pop(context);
+  Widget _buildWeight() {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical : 5),
+      child: TextFormField(
+        decoration: InputDecoration(labelText: 'Weight'),
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'Weight is Required';
+          }
+          return null;
+        },
+        onSaved: (String value) {
+          _weight = value;
+        },
+      ),
+    );
+  }
+
+
+  Widget _buildHeight() {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical : 5),
+      child: TextFormField(
+        decoration: InputDecoration(labelText: 'Height'),
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'Height is Required';
+          }
+          return null;
+        },
+        onSaved: (String value) {
+          _height = value;
+        },
+      ),
+    );
+  }
+
+
+  Widget _buildECName() {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical : 5),
+      child: TextFormField(
+        decoration: InputDecoration(labelText: 'Emergency Contact Name'),
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'Emergency Contact Name is Required';
+          }
+          return null;
+        },
+        onSaved: (String value) {
+          _e_contact_name = value;
+        },
+      ),
+    );
+  }
+
+  Widget _buildECPhone() {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical : 5),
+      child: TextFormField(
+        decoration: InputDecoration(labelText: 'Emergency Contact Phone'),
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'Emergency Contact Phone is Required';
+          }
+          return null;
+        },
+        onSaved: (String value) {
+          _e_contact_phone = value;
+        },
+      ),
+    );
+  }
+
+  Widget _buildECRelationship() {
+    return Container (
+      padding:  EdgeInsets.symmetric(vertical : 5),
+      child: TextFormField(
+        decoration: InputDecoration(labelText: 'Emergency Contact Relationship'),
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'Emergency Contact Relationship is Required';
+          }
+          return null;
+        },
+        onSaved: (String value) {
+          _e_relationship = value;
+        },
+      ),
+    );
+  }
+
+  Widget _buildMedicalConditions() {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical : 5),
+      child: TextFormField(
+        maxLines: null,
+        decoration: InputDecoration(labelText: 'Medical Conditions'),
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'Medical Condition is Required';
+          }
+          return null;
+        },
+        onSaved: (String value) {
+          _mecical_conditions = value;
+        },
+      ),
+    );
+  }
+
+  Widget _buildAllergies() {
+    return Container(
+      padding: EdgeInsets.symmetric(vertical : 5),
+      child: TextFormField(
+        maxLines: null,
+        decoration: InputDecoration(labelText: 'Allergies'),
+        validator: (String value) {
+          if (value.isEmpty) {
+            return 'Allergies is Required';
+          }
+          return null;
+        },
+        onSaved: (String value) {
+          _allergies = value;
+        },
+      ),
+    );
+  }
+
+  _updateEmergencyInfo() {
+    widget.patientService.updateEmergencyInfo(_name, _age, _blood_type, _weight, _height, _e_contact_name, _e_contact_phone, _e_relationship, _mecical_conditions, _allergies);
   }
 }
