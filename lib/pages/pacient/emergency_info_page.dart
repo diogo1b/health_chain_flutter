@@ -55,7 +55,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: emergency_info.name != null ? emergency_info.name : 'Empty',
+                        text: emergency_info.name != null ? emergency_info.name : '',
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -80,7 +80,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: emergency_info.age != null ? emergency_info.age : 'Empty',
+                        text: emergency_info.age != null ? emergency_info.age : '',
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -108,7 +108,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: emergency_info.blood_type != null ? emergency_info.blood_type : 'Empty',
+                        text: emergency_info.blood_type != null ? emergency_info.blood_type : '',
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -133,7 +133,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: emergency_info.weight != null ? emergency_info.weight : 'Empty',
+                        text: emergency_info.weight != null ? emergency_info.weight : '',
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -161,7 +161,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: emergency_info.height != null ? emergency_info.height : 'Empty',
+                        text: emergency_info.height != null ? emergency_info.height : '',
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -213,7 +213,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: emergency_info.e_contact_name != null ? emergency_info.e_contact_name : 'Empty',
+                        text: emergency_info.e_contact_name != null ? emergency_info.e_contact_name : '',
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -238,7 +238,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: emergency_info.e_contact_phone != null ? emergency_info.e_contact_phone : 'Empty',
+                        text: emergency_info.e_contact_phone != null ? emergency_info.e_contact_phone : '',
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -266,7 +266,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                         )
                       ),
                       TextSpan(
-                        text: emergency_info.e_relationship != null ? emergency_info.e_relationship : 'Empty',
+                        text: emergency_info.e_relationship != null ? emergency_info.e_relationship : '',
                         style: TextStyle(
                           fontSize: 18.0
                         )
@@ -292,7 +292,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                     bottom: 8
                   ),
                   child: Text(
-                    emergency_info.hospital != null ? emergency_info.hospital : 'Empty',
+                    emergency_info.hospital != null ? emergency_info.hospital : '',
                     style: TextStyle(
                       fontSize: 18.0
                     )
@@ -316,7 +316,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                     bottom: 8
                   ),
                   child: Text(
-                    emergency_info.mecical_condition != null ? emergency_info.mecical_condition : 'Empty',
+                    emergency_info.mecical_condition != null ? emergency_info.mecical_condition : '',
                     style: TextStyle(
                       fontSize: 18.0
                     )
@@ -340,7 +340,7 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                     bottom: 8
                   ),
                   child: Text(
-                    emergency_info.allergies != null ? emergency_info.allergies : 'Empty',
+                    emergency_info.allergies != null ? emergency_info.allergies : '',
                     style: TextStyle(
                       fontSize: 18.0
                     ),
