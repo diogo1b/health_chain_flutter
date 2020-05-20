@@ -86,7 +86,7 @@ class DoctorService {
       var my_patients = responseJson['my_patients'];
 
       for(var i in my_patients) {
-        Patient patient = Patient(my_patients[i]['id'], my_patients[i]['name'], my_patients[i]['active']);
+        Patient patient = Patient(i['id'], i['name'], i['email']);
         my_patients.add(patient);
       }
       return patient_list;

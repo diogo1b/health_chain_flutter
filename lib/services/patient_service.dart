@@ -93,13 +93,18 @@ class PatientService {
         globals.API_URL + "/user/my_doctors", headers: headers);
     final responseJson = json.decode(response.body);
 
+    print(responseJson);
+
     if(responseJson['succes'] == "false") {
       return doctor_list;
     } else {
       var my_doctors = responseJson['my_doctors'];
 
-      for(var i in my_doctors) {
-        Doctor dr = Doctor(my_doctors[i]['id'], my_doctors[i]['name'], my_doctors[i]['active']);
+      print(my_doctors[0]['active']);
+
+      for(var d in my_doctors) {
+        Doctor dr = Doctor(d['id'].toString(), d['name'], d['active'] == 1);
+        print(dr.active);
         doctor_list.add(dr);
       }
 
