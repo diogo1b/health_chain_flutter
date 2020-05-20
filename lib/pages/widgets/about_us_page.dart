@@ -10,7 +10,7 @@ class _AboutUsPageState extends State<AboutUsPage>{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Acerca de HealthChain'),
+        title: const Text('HealthChain'),
         centerTitle: true,
         backgroundColor: Color.fromRGBO(36, 51, 126, 1.0)
       ),
@@ -31,7 +31,7 @@ class _AboutUsPageState extends State<AboutUsPage>{
                       top: 50
                     ),
                     child: Text(
-                      'Esta apliación fue desarrollada por alumnos del Instituto Tecnológico y de Estudios Superiores de Monterrey para la materia de Proyecto integrador para el desarrollo de soluciones empresariales impartida por el profesor Rafael Lozano Espinosa.',
+                      'This application was developed by Monterrey Institute of Technology students for the Integrative Project for Business Solutions Development subject, taught by PhD. Rafael Lozano Espinosa.',
                       style: TextStyle(
                         fontSize: 18,
                       ),
