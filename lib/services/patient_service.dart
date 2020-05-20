@@ -32,6 +32,22 @@ class PatientService {
         globals.API_URL + "/user/emergency_info", body: body, headers: headers);
     final responseJson = json.decode(response.body);
 
-    print(responseJson);
+    if(responseJson['last_block'] != null) {
+      Fluttertoast.showToast(
+          msg: "Emergency info updated wait a few minutes...",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          fontSize: 16.0
+      );
+    } else {
+      Fluttertoast.showToast(
+          msg: "Emergency info could not be updated",
+          toastLength: Toast.LENGTH_SHORT,
+          gravity: ToastGravity.CENTER,
+          timeInSecForIosWeb: 1,
+          fontSize: 16.0
+      );
+    }
   }
 }

@@ -267,5 +267,6 @@ class _UpdateEmergencyInfoPageState extends State<UpdateEmergencyInfoPage>{
 
   _updateEmergencyInfo() {
     widget.patientService.updateEmergencyInfo(_name, _age, _blood_type, _weight, _height, _e_contact_name, _e_contact_phone, _e_relationship, _mecical_conditions, _allergies);
+    Navigator.pop(context);
   }
 }
