@@ -195,62 +195,82 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
                     ],
                   ),
                 ),
-                Center(
-                  child: Text.rich(
-                    TextSpan(
-                      children: <InlineSpan>[
-                        WidgetSpan(
-                          child: Container(
-                            padding: const EdgeInsets.only(
-                              top: 16
-                            ),
-                            child: Text(
-                              emergency_info.e_contact_name,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                decoration: TextDecoration.underline,
-                                fontSize: 18.0
-                              )
-                            ),
-                          )
+                Text.rich(
+                  TextSpan(
+                    children: <InlineSpan>[
+                      TextSpan(
+                        text: 'Nombre',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0
+                        ),
+                      ),
+                      WidgetSpan(
+                        child: Container(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(''),
                         )
-                      ],
-                    ),
+                      ),
+                      TextSpan(
+                        text: emergency_info.e_contact_name,
+                        style: TextStyle(
+                          fontSize: 18.0
+                        )
+                      ),
+                    ],
                   ),
                 ),
-                Center(
-                  child: Text.rich(
-                    TextSpan(
-                      children: <InlineSpan>[
-                        TextSpan(
-                          text: emergency_info.e_contact_phone,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            decoration: TextDecoration.underline,
-                            fontSize: 18.0
-                          ),
+                Text.rich(
+                  TextSpan(
+                    children: <InlineSpan>[
+                      TextSpan(
+                        text: 'Phone',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0
                         ),
-                        WidgetSpan(
-                          child: Container(
-                            padding: EdgeInsets.only(
-                              left: 25,
-                              right: 25,
-                              top: 8,
-                              bottom: 8
-                            ),
-                            child: Text(''),
-                          )
-                        ),
-                        TextSpan(
-                          text: emergency_info.e_relationship,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            decoration: TextDecoration.underline,
-                            fontSize: 18.0
-                          ),
+                      ),
+                      WidgetSpan(
+                        child: Container(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(''),
                         )
-                      ],
-                    ),
+                      ),
+                      TextSpan(
+                        text: emergency_info.e_contact_phone,
+                        style: TextStyle(
+                          fontSize: 18.0
+                        )
+                      ),
+                      WidgetSpan(
+                        child: Container(
+                          padding: EdgeInsets.only(
+                            right:12.0,
+                            left: 12.0
+                          ),
+                          child: Text(''),
+                        )
+                      ),
+                      TextSpan(
+                        text: 'Relationship',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18.0
+                        ),
+                      ),
+                      WidgetSpan(
+                        child: Container(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(''),
+                        )
+                      ),
+                      TextSpan(
+                        text: emergency_info.e_relationship,
+                        style: TextStyle(
+                          fontSize: 18.0
+                        )
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
