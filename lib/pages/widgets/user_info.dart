@@ -67,6 +67,7 @@ class _UserInfoState extends State<UserInfo>{
           child: RaisedButton(
             textColor: Colors.white,
             shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+            elevation: 5.0,
             color: Color.fromRGBO(104, 202, 184, 1),
             padding: const EdgeInsets.all(5.0),
             onPressed: () {

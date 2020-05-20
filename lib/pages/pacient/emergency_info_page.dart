@@ -25,18 +25,24 @@ class _EmergencyInfoPageState extends State<EmergencyInfoPage> {
               ],
             ),
           ),
-          ButtonTheme(
-            minWidth: 220,
-            child: RaisedButton(
-              textColor: Colors.white,
-              shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
-              color: Color.fromRGBO(104, 202, 184, 1),
-              padding: const EdgeInsets.all(5.0),
-              onPressed: () {
-                
-              },
-              child: const Text('Cambiar contraseña')
-            )
+          Padding(
+            padding: const EdgeInsets.only(
+              bottom: 10
+            ),
+            child: ButtonTheme(
+              minWidth: 220,
+              child: RaisedButton(
+                textColor: Colors.white,
+                shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+                elevation: 5.0,
+                color: Color.fromRGBO(104, 202, 184, 1),
+                padding: const EdgeInsets.all(8.0),
+                onPressed: () {
+                  _updateEmergencyIngo();
+                },
+                child: const Text('Editar información de emergencia')
+              )
+            ),
           ),
         ],
       ),
